@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %}Edit Movie{% endblock %} {% block
+content %}
+<div class="content">
+  <h1 class="heading">Edit Movie</h1>
+  <form method="POST">
+    <p>
+      <label for="title">Title:</label><br />
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="{{ movie.title }}"
+        required
+      />
+    </p>
+    <p>
+      <label for="year">Year:</label><br />
+      <input
+        type="text"
+        id="year"
+        name="year"
+        value="{{ movie.year }}"
+        required
+      />
+    </p>
+    <p>
+      <label for="description">Description:</label><br />
+      <textarea id="description" name="description" required>
+{{ movie.description }}</textarea
+      >
+    </p>
+    <p>
+      <label for="img_url">Image:</label><br />
+      <input
+        type="text"
+        id="img_url"
+        name="img_url"
+        value="{{ movie.img_url }}"
+        required
+      />
+    </p>
+    <p>
+      <label for="rating">Rating:</label><br />
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        value="{{ movie.rating }}"
+        step="0.1"
+      />
+    </p>
+    <p>
+      <label for="review">Review:</label><br />
+      <textarea id="review" name="review">{{ movie.review }}</textarea>
+    </p>
+    <p>
+      <input type="submit" value="Update Movie" />
+    </p>
+  </form>
+</div>
+{% endblock %}
